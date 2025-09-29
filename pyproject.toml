@@ -1,0 +1,32 @@
+# 这是 Python 项目构建系统的标准配置
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# 这是项目的核心元数据
+[project]
+# !!! 关键：这个名字在 PyPI 上必须是独一无二的！
+name = "Alan-binance-sdk" 
+version = "0.1.0"
+authors = [
+  { name="Alan", email="zienzeng0510@gmail.com" },
+]
+description = "A simple SDK to fetch daily K-line data from Binance.US."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+# !!! 关键：列出你的 SDK 依赖的所有其他库
+dependencies = [
+    "pandas",
+    "python-binance",
+    "datetime",
+    "os",
+    "typing",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/your_username/your_repo" # 换成你的 GitHub 仓库地址
