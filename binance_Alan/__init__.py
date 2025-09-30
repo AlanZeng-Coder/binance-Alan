@@ -1,1 +1,1 @@
-from .fetcher.py import BinanceDataFetcher
+from .fetcher import BinanceDataFetcher

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name ="binance_Alan",
-    version="0.0.1",
+    version="0.0.2",
     author="Alan",
     author_email="zienzeng0510@gmail.com",
     description="获取bitcoin,eth等一天内分钟级别的价格在binance.us",
