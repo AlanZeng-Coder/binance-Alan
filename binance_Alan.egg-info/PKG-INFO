@@ -1,3 +1,27 @@
+Metadata-Version: 2.4
+Name: binance_Alan
+Version: 0.0.1
+Summary: 获取bitcoin,eth等一天内分钟级别的价格在binance.us
+Home-page: https://github.com/AlanZeng-Coder/binance-Alan
+Author: Alan
+Author-email: zienzeng0510@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: python-binance
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
 # Alan Binance SDK (请改成你在 pyproject.toml 中写的 name)
 
 这是一个简单的 SDK，用于从 Binance.US 获取指定日期的加密货币 K 线（K-line）数据。

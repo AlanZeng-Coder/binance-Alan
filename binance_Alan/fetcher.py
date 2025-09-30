@@ -12,7 +12,7 @@ class BinanceDataFetcher:
     fetching data for specific symbols and dates, and handles saving the data to
     either CSV or JSON formats.
     """
-    
+
     # A class attribute for mapping user-friendly names to official Binance symbols.
     SYMBOL_MAP = {
     # Bitcoin
@@ -81,7 +81,7 @@ class BinanceDataFetcher:
     def _map_symbol(self, symbol_name: str) -> Optional[str]:
         """
         An internal helper method to map a user-friendly name to an official trading pair.
-        
+
         :param symbol_name: The common name for the cryptocurrency (e.g., 'bitcoin').
         :return: The formatted Binance trading pair (e.g., 'BTCUSD') or None if not found.
         """
@@ -176,9 +176,30 @@ class BinanceDataFetcher:
         :param output_format: The desired output format, 'csv' or 'json'.
         """
         df = self.fetch_daily_data(symbol_name, date_str)
-        
+
         if df is not None and not df.empty:
             binance_symbol = self._map_symbol(symbol_name)
             file_name = f"{binance_symbol}_{date_str}.{output_format.lower()}"
             file_path = os.path.join(self.output_dir, file_name)
             self.save_data(df, file_path, output_format)
+
+# --- How to use this Class ---
+if __name__ == "__main__":
+    # 1. Create an instance of the BinanceDataFetcher.
+    #    You only need to do this once.
+    fetcher = BinanceDataFetcher(output_dir='crypto_daily_data')
+
+    # 2. Use the high-level method to directly fetch and save files.
+    # Get Bitcoin data for 2025-09-24 and save as CSV.
+    fetcher.get_daily_klines_as_file(
+        symbol_name='bitcoin',
+        date_str='2025-09-24',
+        output_format='csv'
+    )
+
+    # Get Ethereum data for 2025-09-25 and save as JSON.
+    fetcher.get_daily_klines_as_file(
+        symbol_name='eth',
+        date_str='2025-09-25',
+        output_format='json'
+    )
